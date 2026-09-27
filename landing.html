@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RESQNET | Assistance Response System</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <main class="landing-page">
+
+        <!-- TOP NAVIGATION -->
+
+        <nav class="top-bar">
+
+            <div class="brand-small">
+
+                <div class="brand-mark"></div>
+
+                <div>
+                    <strong>RESQNET</strong>
+                    <small>School Assistance System</small>
+                </div>
+
+            </div>
+
+
+            <!-- LOGOUT -->
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </nav>
+
+
+        <!-- MAIN CONTENT -->
+
+        <section class="welcome-section">
+
+            <!-- LOGO -->
+
+            <div class="hero-logo">
+
+                <div class="search-logo"></div>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div class="status-label">
+
+                <span class="status-dot"></span>
+
+                SYSTEM ONLINE
+
+            </div>
+
+
+            <!-- WELCOME -->
+
+            <h1>
+
+                Welcome,
+                <span id="welcome-user"></span>!
+
+            </h1>
+
+
+            <h2>
+                RESQNET
+            </h2>
+
+
+            <p class="system-title">
+
+                An IoT-Based School Assistance Alert and
+                Response Monitoring System
+
+            </p>
+
+
+            <p class="description">
+
+                A school assistance system designed to help students
+                and personnel request assistance through registered
+                alert stations and notify authorized school personnel.
+
+            </p>
+
+
+            <!-- SYSTEM FEATURES -->
+
+            <div class="info-grid">
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        📡
+                    </div>
+
+                    <h3>
+                        IoT Alert Stations
+                    </h3>
+
+                    <p>
+                        ESP32-based stations send assistance alerts
+                        through Wi-Fi.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Device-Based Location
+                    </h3>
+
+                    <p>
+                        Each alert is identified using a registered
+                        Device ID and assigned school location.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🚨
+                    </div>
+
+                    <h3>
+                        Alert Monitoring
+                    </h3>
+
+                    <p>
+                        Authorized personnel can monitor and respond
+                        to assistance requests.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- COVERAGE -->
+
+            <div class="location-note">
+
+                <strong>Prototype Coverage:</strong>
+
+                HEB • GZB • TSB • ABB • Gym
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <footer>
+
+                RESQNET • SCHOOL ASSISTANCE ALERT & RESPONSE MONITORING
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <!-- LANDING PAGE SCRIPT -->
+
+    <script>
+
+        const loggedIn =
+            sessionStorage.getItem("isLoggedIn");
+
+        const username =
+            sessionStorage.getItem("loggedInUser");
+
+
+        /* CHECK LOGIN */
+
+        if (
+            loggedIn !== "true" ||
+            !username
+        ) {
+
+            window.location.href = "login.html";
+
+        } else {
+
+            document.getElementById("welcome-user").textContent =
+                username;
+
+        }
+
+
+        /* LOGOUT */
+
+        function logout() {
+
+            sessionStorage.removeItem("isLoggedIn");
+            sessionStorage.removeItem("loggedInUser");
+
+            window.location.href = "login.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
