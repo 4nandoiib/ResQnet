@@ -25,6 +25,7 @@ body::before {
     background-size: 45px 45px;
 }
 
+
 /* LOGIN & REGISTER */
 
 .page-container {
@@ -47,6 +48,7 @@ body::before {
     position: relative;
     z-index: 1;
 }
+
 
 /* LOGO */
 
@@ -89,7 +91,6 @@ body::before {
 .search-logo::after {
     content: "";
     position: absolute;
-    height: 4px;
     background: white;
     border-radius: 5px;
     transform: rotate(45deg);
@@ -97,6 +98,7 @@ body::before {
 
 .brand-logo::after {
     width: 13px;
+    height: 4px;
     top: 38px;
     left: 37px;
 }
@@ -112,23 +114,19 @@ body::before {
     color: #ef4444;
 }
 
-.brand p,
-.form-header p,
-.description {
-    color: #94a3b8;
-}
-
 .brand p {
+    color: #94a3b8;
     font-size: 10px;
 }
+
 
 /* STATUS */
 
 .system-status,
 .status-label {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 7px;
     color: #86efac;
     font-size: 10px;
@@ -149,6 +147,7 @@ body::before {
     box-shadow: 0 0 8px #22c55e;
 }
 
+
 /* FORM */
 
 .form-header {
@@ -167,6 +166,7 @@ body::before {
 }
 
 .form-header p {
+    color: #94a3b8;
     font-size: 11px;
 }
 
@@ -193,6 +193,9 @@ body::before {
     box-shadow: 0 0 0 3px rgba(239,68,68,.12) !important;
 }
 
+
+/* BUTTONS */
+
 .login-btn,
 .register-btn {
     width: 100%;
@@ -212,6 +215,9 @@ body::before {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(220,38,38,.3);
 }
+
+
+/* LINKS & VALIDATION */
 
 .account-link {
     margin-top: 18px;
@@ -238,6 +244,7 @@ body::before {
 .form-control.valid {
     border-color: #22c55e !important;
 }
+
 
 /* LANDING */
 
@@ -281,6 +288,7 @@ body::before {
 
 .brand-mark::after {
     width: 9px;
+    height: 3px;
     top: 27px;
     left: 25px;
 }
@@ -309,6 +317,9 @@ body::before {
     background: #dc2626;
     color: white;
 }
+
+
+/* LANDING CONTENT */
 
 .welcome-section {
     width: 100%;
@@ -339,9 +350,9 @@ body::before {
 
 .search-logo::after {
     width: 17px;
+    height: 5px;
     top: 45px;
     left: 44px;
-    height: 5px;
 }
 
 .welcome-section h1 {
@@ -362,11 +373,15 @@ body::before {
 }
 
 .description {
+    color: #94a3b8;
     font-size: 12px;
     line-height: 1.7;
     max-width: 650px;
     margin: 15px auto 25px;
 }
+
+
+/* CARDS */
 
 .info-grid {
     display: grid;
@@ -397,6 +412,9 @@ body::before {
     line-height: 1.5;
 }
 
+
+/* FOOTER */
+
 .location-note {
     display: inline-block;
     padding: 8px 14px;
@@ -417,9 +435,11 @@ footer {
     letter-spacing: 1px;
 }
 
+
 /* MOBILE */
 
 @media (max-width: 700px) {
+
     .login-card {
         max-width: 400px;
         padding: 27px 22px;
@@ -446,4 +466,5 @@ footer {
     .brand-small small {
         display: none;
     }
+
 }

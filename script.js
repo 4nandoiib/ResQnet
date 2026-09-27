@@ -45,8 +45,11 @@ $(document).ready(function () {
 
             submitHandler: function (form) {
 
-                const username = $("#username").val().trim();
-                const password = $("#password").val();
+                const username =
+                    $("#username").val().trim();
+
+                const password =
+                    $("#password").val();
 
 
                 if (
@@ -54,8 +57,15 @@ $(document).ready(function () {
                     password === validPassword
                 ) {
 
-                    sessionStorage.setItem("isLoggedIn", "true");
-                    sessionStorage.setItem("loggedInUser", username);
+                    sessionStorage.setItem(
+                        "isLoggedIn",
+                        "true"
+                    );
+
+                    sessionStorage.setItem(
+                        "loggedInUser",
+                        username
+                    );
 
                     window.location.href = "landing.html";
 
@@ -167,8 +177,6 @@ $(document).ready(function () {
             sessionStorage.getItem("loggedInUser");
 
 
-        /* CHECK LOGIN */
-
         if (
             loggedIn !== "true" ||
             !username
@@ -181,8 +189,6 @@ $(document).ready(function () {
         }
 
 
-        /* SHOW USERNAME */
-
         $("#welcome-user").text(username);
 
     }
@@ -194,13 +200,9 @@ $(document).ready(function () {
 
     $("#logoutButton").on("click", function () {
 
-        /* REMOVE LOGIN SESSION */
-
         sessionStorage.removeItem("isLoggedIn");
+
         sessionStorage.removeItem("loggedInUser");
-
-
-        /* RETURN TO LOGIN */
 
         window.location.href = "index.html";
 
